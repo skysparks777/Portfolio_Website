@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Academy&display=swap" rel="stylesheet">
+    <title>Digital Art Gallery</title>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffd700;
+            margin: 0;
+            padding: 0;
+            font-family: 'Academy', 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('https://i.pinimg.com/564x/b0/85/20/b08520902287e00c623e4950a8b54cdb.jpg');
+            background-size: cover;
+        }
+
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left,
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-left {
+            margin-left: 20px;
+        }
+
+        .nav-right {
+            margin-right: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav a {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        h1 {
+            margin-top: 100px;
+            text-align: center;
+            font-size: 48px;
+        }
+
+        /* Gallery layout using grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+            gap: 20px; /* Space between images */
+            margin: 20px;
+            width: 90%; /* Limit the width of the gallery */
+            max-width: 1200px; /* Optional: set a maximum width */
+        }
+
+        /* Fixed size for each image */
+        .gallery img {
+            width: 100%; /* Full width of the grid item */
+            height: 300px; /* Fixed height */
+            object-fit: cover; /* Maintain aspect ratio */
+            border: 5px solid #ffd700;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .description {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 40px;
+            margin: 0 auto;
+            width: 50%;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 14px;
+            position: relative;
+        }
+
+        footer::before {
+            content: "Created by- Miss Prashita Kalsotra";
+            font-size: 12px;
+            margin-top: 5px;
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        footer::after {
+            content: "";
+            display: block;
+            width: 50%;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 10px solid #ffd700; /* Golden frame */
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+        .quote-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: rgba(255, 215, 0, 0.2);
+            border-radius: 10px;
+            border: 2px solid #ffd700;
+            max-width: 600px;
+        }
+
+        .quote-section blockquote {
+            font-size: 24px;
+            font-style: italic;
+            color: #ffd700;
+        }
+
+        .quote-section cite {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-left">
+            <ul>
+                <li><a href="portofiol.html">Home</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="Digitalart.html">Digital Art</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="techme.html">Tech-me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Digital Art Gallery</h1>
+    <div class="description">
+        <p>Welcome to my Digital Art Gallery, where creativity meets technology. Explore vibrant, imaginative pieces that blend colors and emotions.</p>
+    </div>
+
+    <div class="gallery">
+        <img src="https://i.pinimg.com/564x/00/34/67/0034674cf89c796fb6871ad7a6563295.jpg" alt="Digital Art 1" onclick="openLightbox(this.src)">
+        <img src="https://i.pinimg.com/474x/68/19/05/681905bab838fc8d3217faa703187668.jpg" alt="Digital Art 2" onclick="openLightbox(this.src)">
+        <img src="https://i.pinimg.com/736x/54/20/9e/54209e756f85cdcc0386d48df1bc867f.jpg" alt="Digital Art 3" onclick="openLightbox(this.src)">
+        <img src="https://i.pinimg.com/736x/6c/17/0c/6c170c69863c4e14738907f6e5b1b8ee.jpg" alt="Digital Art 4" onclick="openLightbox(this.src)">
+        <img src="https://i.pinimg.com/736x/58/46/15/5846154bb904e22c3b1a5903f23c7c87.jpg" alt="Exhibition Art 1" onclick="openLightbox(this.src)">
+        <img src="https://i.pinimg.com/736x/8d/cd/a6/8dcda69ee9ded64b52261e9d6f1c9034.jpg" alt="Exhibition Art 2" onclick="openLightbox(this.src)">
+        <img src="https://i.pinimg.com/736x/98/15/04/9815047719b1da02e03cee02a8e2b655.jpg" alt="Exhibition Art 3" onclick="openLightbox(this.src)">
+        <img src="https://i.pinimg.com/736x/8a/1f/94/8a1f949952fb003d6c0fd1dd05729f2a.jpg" alt="Exhibition Art 4" onclick="openLightbox(this.src)">
+        <img src="https://i.pinimg.com/736x/ca/cd/eb/cacdebdf1172e734b470fded6ab22cf2.jpg" alt="Exhibition Art 4" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-image" src="" alt="Lightbox Image">
+    </div>
+
+    <div class="quote-section">
+        <blockquote>
+            "Every artist was first an amateur."
+            <cite>- Ralph Waldo Emerson</cite>
+        </blockquote>
+    </div>
+
+    <footer>
+        <p>Connect with me on:</p>
+        <div class="social-icons">
+            <a href="https://github.com/skysparks777" target="_blank"><img src="https://i.pinimg.com/564x/87/ff/0f/87ff0fdbce2d60753dde535165e3bd6b.jpg" alt="GitHub"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="https://i.pinimg.com/236x/32/ec/0b/32ec0b7217542c97c13bae1f5db24aef.jpg" alt="Instagram"></a>
+            <a href="https://discord.gg/97YHnDnp" target="_blank"><img src="https://i.pinimg.com/564x/45/fc/04/45fc047a4d037ea0e090b341a46ff4e9.jpg" alt="Discord"></a>
+            <a href="https://youtu.be/9OZA9Me2XCw?si=rt4ZNbqgxZx7TkYJ" target="_blank"><img src="https://i.pinimg.com/236x/21/ea/37/21ea376bcb0e1512ac02d91a80e666a6.jpg" alt="YouTube"></a>
+        </div>
+    </footer>
+
+    <script>
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            lightboxImage.src = src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+    </script>
+</body>
+
+</html>
