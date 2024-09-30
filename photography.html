@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Academy&display=swap" rel="stylesheet">
+    <title>Photography Gallery</title>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffd700;
+            margin: 0;
+            padding: 0;
+            font-family: 'Academy', 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('https://i.pinimg.com/564x/b0/85/20/b08520902287e00c623e4950a8b54cdb.jpg');
+            background-size: cover;
+            color: #ffd700;
+        }
+
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .nav-left, .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-left {
+            margin-left: 20px;
+        }
+
+        .nav-right {
+            margin-right: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav a {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        h1 {
+            margin-top: 100px;
+            text-align: center;
+            font-size: 48px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            justify-items: center;
+            align-items: center;
+            margin: 20px;
+            max-width: 1000px; /* Ensure the gallery stays within a fixed width */
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            max-height: 300px;
+            object-fit: cover;
+            border: 5px solid #ffd700;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .description {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 40px;
+            margin: 0 auto;
+            width: 50%;
+        }
+
+        /* Make sure grid stays 3x3 on different screen sizes */
+        @media (max-width: 1024px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .gallery img {
+                max-width: 250px;
+                max-height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr); /* Still 3 columns */
+            }
+
+            .gallery img {
+                max-width: 200px;
+                max-height: 200px;
+            }
+
+            .description {
+                width: 80%;
+            }
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 14px;
+            position: relative;
+        }
+
+        footer::before {
+            content: "Created by- Miss Prashita Kalsotra";
+            font-size: 12px;
+            margin-top: 5px;
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        footer::after {
+            content: "";
+            display: block;
+            width: 50%;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 10px solid #ffd700;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .quote-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: rgba(255, 215, 0, 0.2);
+            border-radius: 10px;
+            border: 2px solid #ffd700;
+            max-width: 600px;
+        }
+
+        .quote-section blockquote {
+            font-size: 24px;
+            font-style: italic;
+            color: #ffd700;
+        }
+
+        .quote-section cite {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-left">
+            <ul>
+                <li><a href="portofiol.html">Home</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="Digitalart.html">Digital Art</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="techme.html">Tech-me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Photography Gallery</h1>
+    <div class="description">
+        <p>Welcome to my Photography Gallery, where moments are captured and memories are preserved. Explore stunning visuals that tell a story.</p>
+    </div>
+
+    <div class="gallery">
+        <img src="https://uploads-ssl.webflow.com/648eddd1931d79a81b2fc313/648edf04a137748e8220c155_IMG-20210804-WA0002~2-p-1080.jpg" alt="Photography 1" onclick="openLightbox(this.src)">
+        <img src="https://uploads-ssl.webflow.com/648eddd1931d79a81b2fc313/648edf054342be4ed81eb69a_20220723_192615-p-1080.jpg" alt="Photography 2" onclick="openLightbox(this.src)">
+        <img src="https://uploads-ssl.webflow.com/648eddd1931d79a81b2fc313/648edf0432f94fd8cc6b616c_WhatsApp%20Image%202022-09-25%20at%2011.32.06%20AM-p-500.jpeg" alt="Photography 3" onclick="openLightbox(this.src)">
+        <img src="https://i.pinimg.com/736x/b1/fb/aa/b1fbaad334cc46edac071e14b88c3b71.jpg" alt="Photography 4" onclick="openLightbox(this.src)">
+        <img src="https://i.pinimg.com/736x/34/16/c4/3416c41f7eb531a22e9e60ab6905682b.jpg" alt="Photography 5" onclick="openLightbox(this.src)">
+        <img src="https://i.pinimg.com/736x/08/a6/00/08a600538a3b58a302cd40a69f7901d9.jpg" alt="Photography 6" onclick="openLightbox(this.src)">
+        <img src="https://i.pinimg.com/736x/2a/87/d0/2a87d0bacb86ec12feae805c33236b2f.jpg" alt="Photography 7" onclick="openLightbox(this.src)">
+        <img src="https://i.pinimg.com/736x/2d/cf/68/2dcf6823574eef4b1fc5dd4fb2492feb.jpg" alt="Photography 8" onclick="openLightbox(this.src)">
+        <img src="https://i.pinimg.com/564x/5c/58/11/5c58119893ac072c76df06757585e9a7.jpg" alt="Photography 9" onclick="openLightbox(this.src)">
+    </div>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-image" src="">
+    </div>
+
+    <div class="quote-section">
+        <blockquote>"Photography is the story I fail to put into words."</blockquote>
+        <cite>— Destin Sparks</cite>
+    </div>
+
+    <footer>
+        <p>Connect with me on:</p>
+        <div class="social-icons">
+            <a href="https://github.com/skysparks777" target="_blank"><img src="https://i.pinimg.com/564x/87/ff/0f/87ff0fdbce2d60753dde535165e3bd6b.jpg" alt="GitHub"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="https://i.pinimg.com/236x/32/ec/0b/32ec0b7217542c97c13bae1f5db24aef.jpg" alt="Instagram"></a>
+            <a href="https://discord.gg/97YHnDnp" target="_blank"><img src="https://i.pinimg.com/564x/45/fc/04/45fc047a4d037ea0e090b341a46ff4e9.jpg" alt="Discord"></a>
+            <a href="https://youtu.be/9OZA9Me2XCw?si=rt4ZNbqgxZx7TkYJ" target="_blank"><img src="https://i.pinimg.com/236x/21/ea/37/21ea376bcb0e1512ac02d91a80e666a6.jpg" alt="YouTube"></a>
+        </div>
+    </footer>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById("lightbox").classList.add("active");
+            document.getElementById("lightbox-image").src = src;
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").classList.remove("active");
+        }
+    </script>
+</body>
+
+</html>

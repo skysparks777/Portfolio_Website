@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tech Me</title>
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/564x/b0/85/20/b08520902287e00c623e4950a8b54cdb.jpg');
+            background-size: cover;
+            color: #ffd700;
+            margin: 0;
+            padding: 0;
+            font-family: 'Academy', 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .universal-nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+
+        .universal-nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .universal-nav a {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav {
+            position: fixed;
+            left: 20px;
+            top: 80px; /* Adjust based on the height of the universal nav */
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .nav-left, .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-left {
+            margin-left: 20px;
+        }
+
+        .nav-right {
+            margin-right: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        h1 {
+            margin-top: 150px;
+            text-align: center;
+            font-size: 48px;
+        }
+
+        .section {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            margin: 40px 20px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .gadget-image {
+            width: 80%; /* Smaller size */
+            max-width: 400px;
+            border: 5px solid #ffd700;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 14px;
+            position: relative;
+        }
+
+        footer::before {
+            content: "Created by- Miss Prashita Kalsotra";
+            font-size: 12px;
+            margin-top: 5px;
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        footer::after {
+            content: "";
+            display: block;
+            width: 50%;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .software-services {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .software-services ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .software-services li {
+            margin: 10px 0;
+        }
+
+        .contact {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="universal-nav">
+        <ul>
+            <li><a href="portofiol.html">Home</a></li>
+            <li><a href="photography.html">Photography</a></li>
+            <li><a href="Digitalart.html">Digital Art</a></li>
+            <li><a href="techme.html">Tech Me</a></li>
+        </ul>
+    </div>
+
+    <nav>
+        <div class="nav-left">
+            <ul>
+                <li><a href="#languages">Languages</a></li>
+                <li><a href="#gadgets">Gadgets</a></li>
+                <li><a href="#software">Software</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Tech Me</h1>
+
+    <div class="section" id="languages">
+        <h2>Languages I've Learned</h2>
+        <p>I have explored a variety of programming languages to enhance my skill set:</p>
+        <ul style="text-align: left; margin: auto; max-width: 600px;">
+            <li><strong>C++</strong> (2021-22): Developed strong foundational skills in object-oriented programming.</li>
+                <li><strong>C</strong> (September 2023): Gained low-level programming insights, enhancing my understanding of memory management.</li>
+                <li><strong>Python</strong> (March 2023): Engaged in projects involving data analysis and automation scripts.</li>
+                <li><strong>HTML & CSS</strong>: Crafted web pages with responsive designs.</li>
+                <li><strong>Java</strong> (December 2023): Implemented various applications, focusing on Android development.</li>
+                <li><strong>R</strong> (July 2024): Explored statistical analysis and data visualization.</li>
+                <li><strong>React</strong> (Ongoing): Currently enhancing my skills in building dynamic user interfaces.</li>
+        </ul>
+    </div>
+
+    <div class="section" id="gadgets">
+        <h2>About My Gadgets</h2>
+        <img src="https://i.pinimg.com/736x/b7/b8/fb/b7b8fb80bd31ef61fe46146650bc442d.jpg" alt="My Workstation" class="gadget-image">
+        <p>My workstation includes an MSI laptop and an LG extended monitor, which I love framing together for a productive environment. I also use a Mac Mini M1, known for its great features that enhance my digital art experience. My current phone is a Samsung M32, and my pen tablet allows my creative magic to flow seamlessly onto the canvas.</p>
+    </div>
+
+    <div class="section" id="education">
+        <h2>Education</h2>
+       
+        <div style="margin-top: 30px; border-top: 1px solid #ffd700; padding-top: 20px;">
+            <p style="font-size: 1.4em; font-weight: bold;">B.Tech (Computer Science)</p>
+            <p style="margin: 0;">2024 - till date</p>
+            <p style="font-style: italic; color: #ffd700;">GCET, Jammu</p>
+        </div>
+
+        <div style="margin-top: 30px; border-top: 1px solid #ffd700; padding-top: 20px;">
+            <p style="font-size: 1.4em; font-weight: bold;">10+2 (Higher Secondary Schooling)</p>
+            <p style="margin: 0;">2019 - 2023</p>
+            <p style="font-style: italic; color: #ffd700;">MHS, DAV Hr. Sec. School, Udhampur</p>
+        </div>
+
+        <div style="margin-top: 30px; border-top: 1px solid #ffd700; padding-top: 20px;">
+            <p style="font-size: 1.4em; font-weight: bold;">Schooling</p>
+            <p style="margin: 0;">2009 - 2019</p>
+            <p style="font-style: italic; color: #ffd700;">Army Public School, Udhampur</p>
+        </div>
+    </div>
+    
+
+    <div class="section" id="contact">
+        <h2>Contact</h2>
+        <div class="contact">
+            <p>If you're the Instagram or Facebook type, then sorry, I am not your type. But if you are a LinkedIn type, feel free to connect with me <a href="https://www.linkedin.com/in/yourprofile" target="_blank">there</a>.</p>
+            <p> Let’s connect and see if our professional chemistry can lead to a successful collaboration <a href="www.linkedin.com/in/d-0a6326318" target="_blank">LinkedIn</a>.</p>
+            <p>If you prefer email, then you are definitely my type! Reach out anytime at <a href="mailto:prashitakalsotra@gmail.com">prashitakalsotra@gmail.com</a>.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Connect with me on:</p>
+        <div class="social-icons">
+            <a href="https://github.com/skysparks777" target="_blank"><img src="https://i.pinimg.com/564x/87/ff/0f/87ff0fdbce2d60753dde535165e3bd6b.jpg" alt="GitHub" style="width: 30px; height: 30px; border-radius: 50%;"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="https://i.pinimg.com/236x/32/ec/0b/32ec0b7217542c97c13bae1f5db24aef.jpg" alt="Instagram" style="width: 30px; height: 30px; border-radius: 50%;"></a>
+            <a href="https://discord.gg/97YHnDnp" target="_blank"><img src="https://i.pinimg.com/564x/45/fc/04/45fc047a4d037ea0e090b341a46ff4e9.jpg" alt="Discord" style="width: 30px; height: 30px; border-radius: 50%;"></a>
+            <a href="https://youtu.be/9OZA9Me2XCw?si=rt4ZNbqgxZx7TkYJ" target="_blank"><img src="https://i.pinimg.com/236x/21/ea/37/21ea376bcb0e1512ac02d91a80e666a6.jpg" alt="YouTube" style="width: 30px; height: 30px; border-radius: 50%;"></a>
+        </div>
+    </footer>
+
+</body>
+</html>
