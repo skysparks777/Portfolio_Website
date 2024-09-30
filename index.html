@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Tech Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Academy&display=swap" rel="stylesheet">
+    <title>Prashita Kalsotra</title>
     <style>
         body {
             background-image: url('https://i.pinimg.com/564x/b0/85/20/b08520902287e00c623e4950a8b54cdb.jpg');
@@ -13,102 +14,243 @@
             color: #ffd700;
             margin: 0;
             padding: 0;
-            font-family: 'Academy', 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
+            font-family: 'Academy', 'Arial', sans-serif;
+        }
+        .modal img {
+            max-width: 80%;
+            max-height: 80%;
+            border: 10px solid white;
+            border-radius: 10px; /* Border radius for rounded corners */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Black shadow */
+            transition: transform 0.5s;
         }
 
-        .universal-nav {
+        .modal img:hover {
+            transform: scale(1.1);
+        }
+
+        .profile-container {
+            text-align: center;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .profile-container img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .glow {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            display: flex;
-            justify-content: center;
+            height: 100%;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            animation: glowing 2s infinite;
+            z-index: -1;
+        }
+
+        @keyframes glowing {
+            0% {
+                box-shadow: 0 0 10px #fff;
+            }
+            50% {
+                box-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700;
+            }
+            100% {
+                box-shadow: 0 0 10px #fff;
+            }
+        }
+        .modal {
+            display: none;
             position: fixed;
             top: 0;
-            z-index: 10;
-        }
-
-        .universal-nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 20px;
-        }
-
-        .universal-nav a {
-            color: #ffd700;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        nav {
-            position: fixed;
-            left: 20px;
-            top: 80px; /* Adjust based on the height of the universal nav */
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
-
-        .nav-left, .nav-right {
-            display: flex;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
             align-items: center;
+            z-index: 2;
         }
 
-        .nav-left {
-            margin-left: 20px;
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
         }
 
-        .nav-right {
-            margin-right: 20px;
+
+        .profile-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .profile-section h1 {
+            font-family: 'Academy', 'Arial', sans-serif;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .profile-section p {
+            font-family: 'Academy', 'Arial', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            text-align: center;
+            width: 100%;
         }
 
         nav a {
             color: #ffd700;
             text-decoration: none;
-            font-size: 18px;
+            margin: 0 15px;
         }
 
-        h1 {
-            margin-top: 150px;
-            text-align: center;
-            font-size: 48px;
-        }
-
-        .section {
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            margin: 40px 20px;
+        section {
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 20px;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-            max-width: 800px;
-            width: 90%;
+            margin: 20px;
+            width: 100%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .art-section,
+        .photography-section,
+        .coding-section {
             text-align: center;
         }
 
-        .gadget-image {
-            width: 80%; /* Smaller size */
+        .art-section img,
+        .photography-section img,
+        .coding-section img {
+            width: 100%;
             max-width: 400px;
-            border: 5px solid #ffd700;
-            border-radius: 10px;
-            margin-top: 20px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
         }
+
+        .art-section img:hover,
+        .photography-section img:hover,
+        .coding-section img:hover {
+            transform: scale(1.1);
+        }
+
+        .art-section img:nth-child(odd),
+        .photography-section img:nth-child(even),
+        .coding-section img:nth-child(odd) {
+            float: left;
+            margin-right: 15px;
+        }
+
+        .art-section img:nth-child(even),
+        .photography-section img:nth-child(odd),
+        .coding-section img:nth-child(even) {
+            float: right;
+            margin-left: 15px;
+        }
+         .art-section img:nth-child(1),
+
+
+     .photography-section img:nth-child(1) {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border: 5px solid #ffd700; /* Add a gold frame around the image */
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+    }
+    .gallery img:nth-child(1) {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border: 5px solid #ffd700; /* Add a gold frame around the image */
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.gallery img:nth-child(1):hover {
+    transform: scale(1.1);
+}
+
+    .art-section img:nth-child(1):hover,
+    .photography-section img:nth-child(1):hover {
+    transform: scale(1.1);
+}
+
+        .art-section img:nth-child(2),
+        .photography-section img:nth-child(2),
+        .art-section img:nth-child(3),
+        .photography-section img:nth-child(3),
+        .art-section img:nth-child(4),
+        .photography-section img:nth-child(4) {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .coding-section img:nth-child(2),
+        .coding-section img:nth-child(3),
+        .coding-section img:nth-child(4) {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            object-fit: cover;
+        }
+        .gallery img {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border: 5px solid #ffd700; /* Add a gold frame around the image */
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+.gallery img:nth-child(odd) {
+    float: left;
+    margin-right: 15px;
+}
+
+.gallery img:nth-child(even) {
+    float: right;
+    margin-left: 15px;
+}
+
+.gallery img:nth-child(2),
+.gallery img:nth-child(3),
+.gallery img:nth-child(4) {
+    height: 300px;
+}
+
 
         footer {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
             text-align: center;
             width: 100%;
@@ -142,114 +284,112 @@
             transform: translate(-50%, -50%);
         }
 
-        .software-services {
-            text-align: left;
-            margin: 20px auto;
-            max-width: 600px;
+        .social-icons {
+            display: flex;
+            justify-content: center;
         }
 
-        .software-services ul {
-            list-style-type: none;
-            padding: 0;
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 10px;
         }
 
-        .software-services li {
-            margin: 10px 0;
-        }
-
-        .contact {
-            text-align: left;
-            margin: 20px auto;
-            max-width: 600px;
+        .coding-section a {
+            color: #ffd700;
+            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
-
-    <div class="universal-nav">
-        <ul>
-            <li><a href="portofiol.html">Home</a></li>
-            <li><a href="photography.html">Photography</a></li>
-            <li><a href="Digitalart.html">Digital Art</a></li>
-            <li><a href="techme.html">Tech Me</a></li>
-        </ul>
+    
+    <div class="profile-container">
+        <img src="https://i.pinimg.com/564x/ff/c9/e0/ffc9e01e99e3f29ef0f54f57a6f77689.jpg" alt="Prashita Kalsotra">
+        <div class="glow"></div>
     </div>
 
-    <nav>
-        <div class="nav-left">
-            <ul>
-                <li><a href="#languages">Languages</a></li>
-                <li><a href="#gadgets">Gadgets</a></li>
-                <li><a href="#software">Software</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <h1>Tech Me</h1>
-
-    <div class="section" id="languages">
-        <h2>Languages I've Learned</h2>
-        <p>I have explored a variety of programming languages to enhance my skill set:</p>
-        <ul style="text-align: left; margin: auto; max-width: 600px;">
-            <li><strong>C++</strong> (2021-22): Developed strong foundational skills in object-oriented programming.</li>
-                <li><strong>C</strong> (September 2023): Gained low-level programming insights, enhancing my understanding of memory management.</li>
-                <li><strong>Python</strong> (March 2023): Engaged in projects involving data analysis and automation scripts.</li>
-                <li><strong>HTML & CSS</strong>: Crafted web pages with responsive designs.</li>
-                <li><strong>Java</strong> (December 2023): Implemented various applications, focusing on Android development.</li>
-                <li><strong>R</strong> (July 2024): Explored statistical analysis and data visualization.</li>
-                <li><strong>React</strong> (Ongoing): Currently enhancing my skills in building dynamic user interfaces.</li>
-        </ul>
-    </div>
-
-    <div class="section" id="gadgets">
-        <h2>About My Gadgets</h2>
-        <img src="https://i.pinimg.com/736x/b7/b8/fb/b7b8fb80bd31ef61fe46146650bc442d.jpg" alt="My Workstation" class="gadget-image">
-        <p>My workstation includes an MSI laptop and an LG extended monitor, which I love framing together for a productive environment. I also use a Mac Mini M1, known for its great features that enhance my digital art experience. My current phone is a Samsung M32, and my pen tablet allows my creative magic to flow seamlessly onto the canvas.</p>
-    </div>
-
-    <div class="section" id="education">
-        <h2>Education</h2>
-       
-        <div style="margin-top: 30px; border-top: 1px solid #ffd700; padding-top: 20px;">
-            <p style="font-size: 1.4em; font-weight: bold;">B.Tech (Computer Science)</p>
-            <p style="margin: 0;">2024 - till date</p>
-            <p style="font-style: italic; color: #ffd700;">GCET, Jammu</p>
-        </div>
-
-        <div style="margin-top: 30px; border-top: 1px solid #ffd700; padding-top: 20px;">
-            <p style="font-size: 1.4em; font-weight: bold;">10+2 (Higher Secondary Schooling)</p>
-            <p style="margin: 0;">2019 - 2023</p>
-            <p style="font-style: italic; color: #ffd700;">MHS, DAV Hr. Sec. School, Udhampur</p>
-        </div>
-
-        <div style="margin-top: 30px; border-top: 1px solid #ffd700; padding-top: 20px;">
-            <p style="font-size: 1.4em; font-weight: bold;">Schooling</p>
-            <p style="margin: 0;">2009 - 2019</p>
-            <p style="font-style: italic; color: #ffd700;">Army Public School, Udhampur</p>
-        </div>
+    <div class="profile-section">
+        <h1>Prashita Kalsotra</h1>
+        <p>"Embracing the artistry of coding and the visual realms of digital art and photography, my days are leisurely spent navigating the vast landscapes of the digital world."</p>
+        <p>Hello, I’m Prashita Kalsotra, a passionate student from India and a true Internet hobbyist. Currently pursuing my B.Tech in Computer Science and Engineering at GCET Jammu, I’m constantly exploring the digital world and expanding my horizons. Alongside my love for tech, I’ve recently embraced the art of writing, finding beauty in every word. For me, life’s a journey full of discovery, and I’m excited to share mine with you.</p>
     </div>
     
 
-    <div class="section" id="contact">
-        <h2>Contact</h2>
-        <div class="contact">
-            <p>If you're the Instagram or Facebook type, then sorry, I am not your type. But if you are a LinkedIn type, feel free to connect with me <a href="https://www.linkedin.com/in/yourprofile" target="_blank">there</a>.</p>
-            <p> Let’s connect and see if our professional chemistry can lead to a successful collaboration <a href="www.linkedin.com/in/d-0a6326318" target="_blank">LinkedIn</a>.</p>
-            <p>If you prefer email, then you are definitely my type! Reach out anytime at <a href="mailto:prashitakalsotra@gmail.com">prashitakalsotra@gmail.com</a>.</p>
+    <nav>
+        <ul>
+            <li><a href="Digitalart.html">Digital Art</a></li>
+            <li><a href="photography.html">Photography</a></li>
+            <li><a href="techme.html">Tech-Me</a></li>
+            <li><a href="#coding">Coding</a></li>
+        </ul>
+    </nav>
+
+    <section id="digital-art" class="art-section">
+        <h2>Digital Art</h2>
+        <div class="gallery">
+            <img src="https://i.pinimg.com/564x/00/34/67/0034674cf89c796fb6871ad7a6563295.jpg" alt="Digital Art Example 1">
+            <p>A digital virtuoso seamlessly blending technology and creativity. With meticulous precision, I craft mesmerizing visuals that transcend conventional boundaries, inviting viewers on a captivating journey through vibrant, otherworldly realms. I transform pixels into portals, creating a harmonious symphony of color and emotion on the digital canvas.</p>
         </div>
-    </div>
+        
+    </section>
+
+    <section id="photography" class="photography-section">
+        <h2>Photography</h2>
+        <div class="gallery">
+            <img src="https://i.pinimg.com/564x/09/5d/17/095d178d7a3fb7152ae991617cec12f9.jpg" alt="Photography Example 1">
+            <p>Photography is not merely a passion but a profound connection that mirrors my perception of the world. Through the lens, I capture moments that resonate with my emotions, creating a visual diary of experiences, people, and places. Photography, for me, is an intimate dialogue with the world, a timeless journey frozen in pixels that reflect my unique perspective and tell stories beyond words.</p>
+        </div>
+        
+    </section>
+
+    <section id="coding" class="coding-section">
+        <h2>Coding</h2>
+        <div class="gallery">
+            <img src="https://i.pinimg.com/736x/b7/b8/fb/b7b8fb80bd31ef61fe46146650bc442d.jpg" alt="Coding Example 1" style="width: 100%; max-width: 400px; height: 300px; object-fit: cover;">
+            <p>It's not just about crafting lines of code; it's a dynamic relationship where I communicate with machines to manifest my visions. With each keystroke, I translate abstract thoughts into functional reality, turning the intangible into tangible, and orchestrating a symphony of logic that brings my ideas to fruition. Coding, for me, is the bridge between imagination and implementation, a powerful tool that empowers me to shape the digital world according to my creative blueprint.</p>
+        </div>
+        <h3>Links</h3>
+        <p><a href="https://capturetheinsides.webflow.io/" target="_blank">My first ever solo project </a></p>
+        <p><a href="https://www.mcsudh.com/" target="_blank">Up running website designed by me</a></p>
+    </section>
 
     <footer>
         <p>Connect with me on:</p>
         <div class="social-icons">
-            <a href="https://github.com/skysparks777" target="_blank"><img src="https://i.pinimg.com/564x/87/ff/0f/87ff0fdbce2d60753dde535165e3bd6b.jpg" alt="GitHub" style="width: 30px; height: 30px; border-radius: 50%;"></a>
-            <a href="https://www.instagram.com/" target="_blank"><img src="https://i.pinimg.com/236x/32/ec/0b/32ec0b7217542c97c13bae1f5db24aef.jpg" alt="Instagram" style="width: 30px; height: 30px; border-radius: 50%;"></a>
-            <a href="https://discord.gg/97YHnDnp" target="_blank"><img src="https://i.pinimg.com/564x/45/fc/04/45fc047a4d037ea0e090b341a46ff4e9.jpg" alt="Discord" style="width: 30px; height: 30px; border-radius: 50%;"></a>
-            <a href="https://youtu.be/9OZA9Me2XCw?si=rt4ZNbqgxZx7TkYJ" target="_blank"><img src="https://i.pinimg.com/236x/21/ea/37/21ea376bcb0e1512ac02d91a80e666a6.jpg" alt="YouTube" style="width: 30px; height: 30px; border-radius: 50%;"></a>
+            <a href="https://github.com/skysparks777" target="_blank"><img src="https://i.pinimg.com/564x/87/ff/0f/87ff0fdbce2d60753dde535165e3bd6b.jpg" alt="GitHub"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="https://i.pinimg.com/236x/32/ec/0b/32ec0b7217542c97c13bae1f5db24aef.jpg" alt="Instagram"></a>
+            <a href="https://discord.gg/97YHnDnp" target="_blank"><img src="https://i.pinimg.com/564x/45/fc/04/45fc047a4d037ea0e090b341a46ff4e9.jpg" alt="Discord"></a>
+            <a href="https://youtu.be/9OZA9Me2XCw?si=rt4ZNbqgxZx7TkYJ" target="_blank"><img src="https://i.pinimg.com/236x/21/ea/37/21ea376bcb0e1512ac02d91a80e666a6.jpg" alt="YouTube"></a>
         </div>
     </footer>
 
+    <div class="modal" id="modal">
+        <img id="modal-image" src="" alt="Enlarged Image">
+    </div>
+
+    <script>
+        // JavaScript to handle image modal
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modal-image');
+
+        function openModal(imageSrc) {
+            modalImage.src = imageSrc;
+            modal.style.display = 'flex';
+        }
+
+        modal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        const galleryImages = document.querySelectorAll('.gallery img');
+        galleryImages.forEach((image, index) => {
+            image.addEventListener('click', () => {
+                openModal(image.src);
+            });
+        });
+    </script>
 </body>
+
 </html>
