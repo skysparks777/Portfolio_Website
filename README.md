@@ -18,19 +18,21 @@ Course title- Web Technology
 **Q1. Build Web Pages (CO2)**
 Website Overview: 
 The website I designed, accessible at https://prashita.kalsotra.com/, is a multi-page portfolio focused on showcasing my skills and projects in digital art, photography, and coding. The goal of this website is to provide visitors with an engaging way to explore my work, learn about my background, and connect with me professionally. It includes sections like an art gallery, Photography, and Tech Me page.
+
 Purpose: 
 The website aims to serve as a personal portfolio and online presence. It showcases a collection of my work, including digital artwork, photography, and coding projects. The website is also intended to demonstrate my ability to design clean, responsive web pages while providing users with an aesthetic and easy-to-navigate experience.
+
 Key HTML Elements:
 1. Structural Elements:
 These elements define the structure and layout of the web page.
-<html>: The root element that contains all other HTML elements.
-<head>: Contains meta-information about the webpage (e.g., title, metadata).
-<body>: Holds the main content of the web page.
-<header>: Represents the header section of a webpage or a section.
-<footer>: Represents the footer section of a webpage or a section.
-<section>: Defines thematic grouping of content.
-<div>: A generic container used to group content for styling or layout purposes.
-<nav>: Used for navigation links.
+html: The root element that contains all other HTML elements.
+head: Contains meta-information about the webpage (e.g., title, metadata).
+body: Holds the main content of the web page.
+header: Represents the header section of a webpage or a section.
+footer: Represents the footer section of a webpage or a section.
+section: Defines thematic grouping of content.
+div: A generic container used to group content for styling or layout purposes.
+nav: Used for navigation links.
 
 2. Text Formatting Elements:
 These elements help format and display text in various ways.
@@ -41,22 +43,23 @@ These elements help format and display text in various ways.
 
 3. List Elements:
 These elements create lists.
-<ul>: Defines an unordered (bulleted) list.
-<li>: Represents a list item (used inside <ul> or <ol>).
-4. Media Elements:
-These elements are used to embed media like images, videos, and audio.
-<img>: Embeds an image.
+ul: Defines an unordered (bulleted) list.
+li: Represents a list item (used inside <ul> or <ol>).
 
-5. Linking and Navigation Elements:
+5. Media Elements:
+These elements are used to embed media like images, videos, and audio.
+img: Embeds an image.
+
+6. Linking and Navigation Elements:
 These elements handle linking and navigation.
-<a>: Defines a hyperlink to link to other pages or resources.
-<link>: Links external resources, such as CSS files.
-<nav>: Represents a section containing navigation links.
-6. Metadata Elements:
+a: Defines a hyperlink to link to other pages or resources.
+link: Links external resources, such as CSS files.
+nav: Represents a section containing navigation links.
+7. Metadata Elements:
 These elements provide metadata or additional information about the webpage.
-<title>: Defines the title of the webpage.
-<style>: Embeds CSS directly within an HTML file.
-<script>: Embeds or references external JavaScript files.
+title: Defines the title of the webpage.
+style: Embeds CSS directly within an HTML file.
+script: Embeds or references external JavaScript files.
 
 Key CSS Techniques:
 Flexbox (display: flex): Implemented to create flexible layouts, aligning items in the navigation bar and making certain sections responsive across different screen sizes.
