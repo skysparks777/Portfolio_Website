@@ -36,7 +36,7 @@ nav: Used for navigation links.
 
 2. Text Formatting Elements:
 These elements help format and display text in various ways.
-<h1> to <h6>: Heading elements, where <h1> is the largest and <h6> is the smallest.
+<h1> to <h6>: Heading elements, where h1 is the largest and h6 is the smallest.
 <p>: Defines a paragraph.
 <hr>: Creates a horizontal rule (divider).
 <blockquote>: Used for long quotations.
